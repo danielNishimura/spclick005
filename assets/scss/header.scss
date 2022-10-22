@@ -8,6 +8,7 @@ body {
     border-bottom: 2px solid #ccc;
     position: fixed;
     z-index: 3;
+    top: 0;
 
     .header-content {
       margin: 0 25px;
@@ -15,6 +16,29 @@ body {
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      .search {
+        position: relative;
+        input {
+          width: 500px;
+          height: 40px;
+          background-color: #ffffff30;
+          border-radius: 20px;
+          color: #fff;
+          outline: 0;
+          border: none;
+          padding: 0 50px;
+          &::placeholder {
+            color: #fff;
+            font-size: 1.1em;
+          }
+        }
+        img {
+          position: absolute;
+          top: 7px;
+          left: 15px;
+          width: 24px;
+        }
+      }
 
       img {
         width: 65px;
@@ -30,6 +54,7 @@ body {
       right: -300px;
       height: 100%;
       background-color: #cacad2;
+      transition: all ease-in 0.5s;
       > a {
         margin: 15px;
         width: 48px;
@@ -44,14 +69,37 @@ body {
 
         li + li {
           margin-top: 40px;
+          a {
+            color: #000;
+          }
         }
       }
+    }
+    &.menu-open {
+      right: 0;
     }
   }
 }
 
-@media (min-width: 768px) {
-}
-
 @media (min-width: 1200px) {
+  body {
+    header {
+      .header-content {
+        .search {
+          input {
+            width: 400px;
+          }
+        }
+        .nav-desktop {
+          ul {
+            display: flex;
+            li {
+              min-width: 100px;
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
